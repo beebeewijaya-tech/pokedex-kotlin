@@ -1,0 +1,26 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="android:colorPrimary">@android:color/black</item>
+    <item name="android:colorPrimaryDark">@android:color/white</item>
+    <item name="android:colorAccent">@android:color/black</item>
+  </style>
+
+  <style name="PokeTitle" parent="TextAppearance.AppCompat.Medium">
+    <item name="android:textSize">@dimen/font_big</item>
+    <item name="android:fontFamily">@font/futura_medium</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="PokeTypeText" parent="TextAppearance.AppCompat.Small">
+    <item name="android:textSize">@dimen/font_tiny</item>
+    <item name="android:fontFamily">@font/futura_medium</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:textAlignment">center</item>
+    <item name="android:paddingTop">@dimen/tiny</item>
+    <item name="android:paddingBottom">@dimen/tiny</item>
+  </style>
+</resources>

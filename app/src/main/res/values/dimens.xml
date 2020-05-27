@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Size -->
+  <dimen name="big">30dp</dimen>
+  <dimen name="medium">20dp</dimen>
+  <dimen name="small">10dp</dimen>
+  <dimen name="tiny">5dp</dimen>
+
+  <!-- Font -->
+  <dimen name="font_big">24dp</dimen>
+  <dimen name="font_medium">20dp</dimen>
+  <dimen name="font_small">16dp</dimen>
+  <dimen name="font_tiny">12dp</dimen>
+  <dimen name="font_sub">10dp</dimen>
+</resources>
