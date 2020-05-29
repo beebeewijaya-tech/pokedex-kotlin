@@ -13,4 +13,8 @@
   <color name="light_yellow">#FFEBB3</color>
   <color name="purple">#be2edd</color>
   <color name="heliotrope">#e056fd</color>
+  <color name="normal">#A8A878</color>
+  <color name="light_normal">#C6C6A7</color>
+  <color name="bug">#A8B820</color>
+  <color name="light_bug">#C6D16E</color>
 </resources>
