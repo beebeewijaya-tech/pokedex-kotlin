@@ -12,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ListViewModel : ViewModel() {
+class ListViewModel : ViewModel(), ListDelegate {
 	private val model: PokemonList
 		get() = PokemonList()
 
@@ -23,7 +23,7 @@ class ListViewModel : ViewModel() {
 		getPokemon()
 	}
 
-	private fun getPokemon() {
+	fun getPokemon() {
 		val mutableListPokemon: MutableList<PokemonTypes> = mutableListOf()
 		val pokemonServices = PokemonServices.servicesClient()
 
@@ -45,7 +45,6 @@ class ListViewModel : ViewModel() {
 							if (sortedPokemon != null) {
 								pokemonListData?.types = sortedPokemon
 							}
-							Log.d("Pokemon data", sortedPokemon.toString())
 							mutableListPokemon.add(pokemonListData as PokemonTypes)
 						}
 						_listPokemonLiveData.postValue(mutableListPokemon)
@@ -55,5 +54,17 @@ class ListViewModel : ViewModel() {
 				}
 			}
 		})
+	}
+
+	override fun filterPokemon(type: String) {
+		if (type.isNullOrEmpty()) {
+			getPokemon()
+		} else {
+			val filteredPokemon = _listPokemonLiveData.value?.filter {
+				it.types[0].type?.name?.capitalize() == type.capitalize()
+			}
+
+			_listPokemonLiveData.postValue(filteredPokemon)
+		}
 	}
 }

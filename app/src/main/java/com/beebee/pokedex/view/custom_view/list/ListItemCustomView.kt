@@ -43,7 +43,7 @@ class ListItemCustomView @JvmOverloads constructor(
 
 	private fun changeColor(pokemon: PokemonTypes) {
 		var color = when (pokemon.types[0]?.type?.name) {
-			"grass" ->  R.color.green
+			"grass" -> R.color.green
 			"fire" -> R.color.red
 			"water" -> R.color.blue
 			"electric" -> R.color.yellow
@@ -52,7 +52,7 @@ class ListItemCustomView @JvmOverloads constructor(
 			else -> R.color.green
 		}
 		var typeColor = when (pokemon.types[0]?.type?.name) {
-			"grass" ->  R.color.wild_carribean_green
+			"grass" -> R.color.wild_carribean_green
 			"fire" -> R.color.light_red
 			"water" -> R.color.light_blue
 			"electric" -> R.color.light_yellow
@@ -61,7 +61,21 @@ class ListItemCustomView @JvmOverloads constructor(
 			else -> R.color.wild_carribean_green
 		}
 		poke_list_container.setBackgroundColor(ContextCompat.getColor(context, color))
-		pokemon_type_one_wrapper.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(context, typeColor)))
-		pokemon_type_two_wrapper.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(context, typeColor)))
+		pokemon_type_one_wrapper.setBackgroundTintList(
+			ColorStateList.valueOf(
+				ContextCompat.getColor(
+					context,
+					typeColor
+				)
+			)
+		)
+		pokemon_type_two_wrapper.setBackgroundTintList(
+			ColorStateList.valueOf(
+				ContextCompat.getColor(
+					context,
+					typeColor
+				)
+			)
+		)
 	}
 }

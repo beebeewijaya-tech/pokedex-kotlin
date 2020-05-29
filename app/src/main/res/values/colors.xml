@@ -17,4 +17,5 @@
   <color name="light_normal">#C6C6A7</color>
   <color name="bug">#A8B820</color>
   <color name="light_bug">#C6D16E</color>
+  <color name="light_grey">#eeeeee</color>
 </resources>
