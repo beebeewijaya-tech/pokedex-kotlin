@@ -6,8 +6,11 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import com.beebee.pokedex.R
 import com.beebee.pokedex.model.pojo.pokemon.PokemonTypes
+import com.beebee.pokedex.utils.Color
+import com.beebee.pokedex.view.ui.list.ListFragmentDirections
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.poke_list.view.*
 
@@ -30,36 +33,31 @@ class ListItemCustomView @JvmOverloads constructor(
 				pokemon_type_one.text = pokemon.types[0]?.type?.name?.capitalize()
 			}
 		}
+
+		// List Color
 		changeColor(pokemon)
 
+		// Pokemon Image
 		Glide.with(this)
 			.load("https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png")
 			.into(pokemon_image)
 
+		// Condition for only 1 types pokemon EG. Charmender
 		if (pokemon.types.size <= 1) {
 			pokemon_type_two_wrapper.visibility = View.GONE
+		}
+
+		// Navigating to detail
+		this.setOnClickListener {
+			val action = ListFragmentDirections.actionListFragmentToDetailFragment(pokemon)
+			findNavController().navigate(action)
 		}
 	}
 
 	private fun changeColor(pokemon: PokemonTypes) {
-		var color = when (pokemon.types[0]?.type?.name) {
-			"grass" -> R.color.green
-			"fire" -> R.color.red
-			"water" -> R.color.blue
-			"electric" -> R.color.yellow
-			"normal" -> R.color.normal
-			"bug" -> R.color.bug
-			else -> R.color.green
-		}
-		var typeColor = when (pokemon.types[0]?.type?.name) {
-			"grass" -> R.color.wild_carribean_green
-			"fire" -> R.color.light_red
-			"water" -> R.color.light_blue
-			"electric" -> R.color.light_yellow
-			"normal" -> R.color.light_normal
-			"bug" -> R.color.light_bug
-			else -> R.color.wild_carribean_green
-		}
+		var color = Color.getColor(pokemon)
+		var typeColor = Color.getTypeColor(pokemon)
+
 		poke_list_container.setBackgroundColor(ContextCompat.getColor(context, color))
 		pokemon_type_one_wrapper.setBackgroundTintList(
 			ColorStateList.valueOf(

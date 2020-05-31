@@ -6,38 +6,8 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
+  android:fitsSystemWindows="true"
   tools:context=".view.activity.MainActivity">
-
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_weight="0.1"
-    android:orientation="horizontal"
-    android:paddingHorizontal="@dimen/medium">
-
-    <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      android:layout_weight="1">
-
-<!--      <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/ic_back_black" />-->
-    </LinearLayout>
-
-    <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center">
-      <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium"
-        android:src="@drawable/ic_list_black" />
-    </LinearLayout>
-  </LinearLayout>
 
   <fragment
     android:id="@+id/nav_host_fragment_container"

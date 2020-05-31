@@ -18,6 +18,9 @@
             app:popEnterAnim="@anim/fragment_close_enter"
             app:popExitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/listFragment" />
+        <argument
+          android:name="pokemon"
+          app:argType="com.beebee.pokedex.model.pojo.pokemon.PokemonTypes" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
